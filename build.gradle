@@ -1,0 +1,22 @@
+apply plugin: 'eclipse'
+apply plugin: 'java'
+
+sourceCompatibility = 1.6
+
+commonsIOVersion = '2.0.1'
+hamcrestVersion = '1.2.1'
+jacksonVersion = '1.8.5'
+junitVersion = '4.8.2'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile group: 'commons-io', name: 'commons-io', version: commonsIOVersion
+    compile group: 'org.codehaus.jackson', name: 'jackson-core-asl', version: jacksonVersion
+    compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: jacksonVersion
+    testCompile group: 'junit', name: 'junit-dep', version: junitVersion
+    testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: hamcrestVersion
+    testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: hamcrestVersion
+}
