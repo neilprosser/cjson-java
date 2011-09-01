@@ -1,7 +1,10 @@
 apply plugin: 'eclipse'
 apply plugin: 'java'
+apply plugin: 'maven'
 
+group = 'com.github.neilprosser'
 sourceCompatibility = 1.6
+version = '1.0'
 
 commonsIOVersion = '2.0.1'
 hamcrestVersion = '1.2.1'
@@ -19,4 +22,10 @@ dependencies {
     testCompile group: 'junit', name: 'junit-dep', version: junitVersion
     testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: hamcrestVersion
     testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: hamcrestVersion
+}
+
+uploadArchives {
+	repositories.mavenDeployer {
+		repository(url: "file://" + System.getProperty("user.home") + "/.m2/repository/")
+	}
 }
